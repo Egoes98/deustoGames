@@ -1,0 +1,36 @@
+<?php 
+
+namespace DGamesBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+* @ORM\Table()
+* @ORM\Entity(repositoryClass="DGamesBundle\Entity\GameRepository")
+* @ORM\HasLifecycleCallbacks()
+*/
+
+class Game
+{
+    /**
+    * @ORM\Id
+    * @ORM\Column(type="integer")
+    * @ORM\GeneratedValue(strategy="AUTO")
+    */
+    protected $id;
+
+    /**
+    * @ORM\Column(type="text")
+    */
+    protected $title;
+
+    /**
+    * @ORM\Column(type="text")
+    */
+    protected $description;
+
+    /**
+    * @ORM\Column(type="date")
+    */
+    protected $releasedate;
+}
