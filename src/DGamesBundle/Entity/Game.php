@@ -34,7 +34,13 @@ class Game
     */
     protected $releasedate;
 
+	
     protected $rate;
+	
+	/**
+    * @ORM\Column(type="text")
+    */
+    protected $photo;
 
     /**
     * @ORM\OneToMany(targetEntity="Opinion", mappedBy="game")
@@ -162,6 +168,16 @@ class Game
     public function getOpinions()
     {
         return $this->opinions;
+    }
+	
+	/**
+     * Get photo
+     *
+     * @return string
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
     }
 
     /**

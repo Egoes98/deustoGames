@@ -9,7 +9,9 @@ class GamesController extends Controller
     public function listAction()
     {
         $games = $this->get('doctrine')->getManager()->getRepository("DGamesBundle:Game")->getLatestGames();
-        return $this->render('DGamesBundle:Games:list.html.twig', array('games' => $games));
+        $opinions = $this->get('doctrine')->getManager()->getRepository("DGamesBundle:Opinion");
+		return $this->render('DGamesBundle:Games:list.html.twig', array('games' => $games));
+		
     }
 
     public function showAction($id)
