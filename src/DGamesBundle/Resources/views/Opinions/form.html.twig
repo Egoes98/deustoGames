@@ -1,0 +1,7 @@
+{{ form_start(form, {'action': path('game_opinion_create', { 'game_id' : opinion.game.id } ), 'method': 'GAME', "class": "game"}) }}
+
+{{ form_widget(form) }}
+
+<p><input type="submit" value="Send"></p>
+
+{{ form_end(form) }}

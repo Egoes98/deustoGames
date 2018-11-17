@@ -1,0 +1,12 @@
+{# src/DGamesBundle/Resources/views/Comment/list.html.twig #}
+
+{% for opinion in opinions %}
+    <article class="opinion {{ cycle(['odd', 'even'], loop.index0) }}" id="opinion-{{ opinion.id }}">
+        <header>
+            <p><span class="highlight">{{ opinion.user }}</span> <a id="game_rate">{{ opinion.rate }}</a></p>
+        </header>
+        <p>{{ opinion.opinion }}</p>
+    </article>
+{% else %}
+    <p>There are not opinions yet.</p>
+{% endfor %}

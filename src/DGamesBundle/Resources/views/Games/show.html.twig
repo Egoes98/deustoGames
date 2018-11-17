@@ -1,0 +1,31 @@
+{% extends "DGamesBundle::layout.html.twig" %}
+{% block title %}{{game.title}}{% endblock %}
+
+{% block body %}
+    <h1>{{game.title}}-<a id="game_rate">{{game.rate}}</a></h1>
+	
+	<div class="cover"><img id="game_cover" src="" alt=""></div>
+
+	<div class="body">
+		{{game.synopsis}}
+		<section class="related_news" id="related_news">
+			{% include 'DGamesBundle:News:list.html.twig' with { 'news': news } %}
+		</section>
+		
+		<section class="opinions" id="opinios">
+			<section class="previous-opinions">
+				<h3>Opinions</h3>
+				{% include 'DGamesBundle:Opinions:list.html.twig' with { 'opinions': opnions } %}
+				<h3>Write an opinion</h3>
+		{{ render(controller( 'DGamesBundle:Opinions:new', { 'game_id': game.id } )) }}
+			</section>
+		</section>
+		
+		<div class="date">{{post.date.format('d-m-Y')}}</div>
+	</div>
+{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link href="{{ asset('css/blog.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
