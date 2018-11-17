@@ -5,41 +5,31 @@ namespace DGamesBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Noticia
- *
- * @ORM\Table()
- * @ORM\Entity(repositoryClass="DGamesBundle\Repository\NoticiaRepository")
- * @ORM\HasLifecycleCallbacks()
- */
+* @ORM\Table()
+* @ORM\Entity(repositoryClass="DGamesBundle\Entity\NoticiaRepository")
+* @ORM\HasLifecycleCallbacks()
+*/
 class Noticia
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="title", type="text")
+     * @ORM\Column(type="text")
      */
     protected $title;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="body", type="text")
+     * @ORM\Column(type="text")
      */
     protected $body;
 
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="date", type="date")
+     * @ORM\Column(type="date")
      */
     protected $date;
 
