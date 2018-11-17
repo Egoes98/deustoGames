@@ -2,26 +2,26 @@
 {% block title %}{{game.title}}{% endblock %}
 
 {% block body %}
-    <h1>{{game.title}}-<a id="game_rate">{{game.rate}}</a></h1>
+    <h1>{{game.title}} - {{game.rate}}/10</h1>
 	
-	<div class="cover"><img id="game_cover" src="" alt=""></div>
+	<div class="cover"><img id="game_cover" src="{# TODO #}" alt=""></div>
 
 	<div class="body">
-		{{game.synopsis}}
+		{{game.description}}
 		<section class="related_news" id="related_news">
-			{% include 'DGamesBundle:News:list.html.twig' with { 'news': news } %}
+			{# include 'DGamesBundle:News:list.html.twig' with { 'news': news } #}
 		</section>
 		
 		<section class="opinions" id="opinios">
 			<section class="previous-opinions">
 				<h3>Opinions</h3>
-				{% include 'DGamesBundle:Opinions:list.html.twig' with { 'opinions': opnions } %}
+				{# include 'DGamesBundle:Opinions:list.html.twig' with { 'opinions': opnions } #}
 				<h3>Write an opinion</h3>
-		{{ render(controller( 'DGamesBundle:Opinions:new', { 'game_id': game.id } )) }}
+		{#{ render(controller( 'DGamesBundle:Opinions:new', { 'game_id': game.id } )) }#}
 			</section>
 		</section>
 		
-		<div class="date">{{post.date.format('d-m-Y')}}</div>
+		<div class="date">{{game.releasedate.format('d-m-Y')}}</div>
 	</div>
 {% endblock %}
 

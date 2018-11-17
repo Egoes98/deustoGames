@@ -33,4 +33,11 @@ class Game
     * @ORM\Column(type="date")
     */
     protected $releasedate;
+
+    protected $rate;
+
+    /**
+    * @ORM\OneToMany(targetEntity="Opinion", mappedBy="game")
+    */
+    protected $opinions;
 }

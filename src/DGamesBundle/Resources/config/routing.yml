@@ -1,3 +1,7 @@
 d_games_homepage:
     path:     /
-    defaults: { _controller: DGamesBundle:Default:index }
+    defaults: { _controller: DGamesBundle:Games:list }
+
+d_games_show:
+    path: /game/{id}
+    defaults: { _controller: DGamesBundle:Games:show}

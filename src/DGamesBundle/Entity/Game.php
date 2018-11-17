@@ -34,6 +34,20 @@ class Game
     */
     protected $releasedate;
 
+    protected $rate;
+
+    /**
+    * @ORM\OneToMany(targetEntity="Opinion", mappedBy="game")
+    */
+    protected $opinions;
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->opinions = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
     /**
      * Get id
      *
@@ -114,5 +128,56 @@ class Game
     public function getReleasedate()
     {
         return $this->releasedate;
+    }
+
+    /**
+     * Add opinion
+     *
+     * @param \DGamesBundle\Entity\Opinion $opinion
+     *
+     * @return Game
+     */
+    public function addOpinion(\DGamesBundle\Entity\Opinion $opinion)
+    {
+        $this->opinions[] = $opinion;
+
+        return $this;
+    }
+
+    /**
+     * Remove opinion
+     *
+     * @param \DGamesBundle\Entity\Opinion $opinion
+     */
+    public function removeOpinion(\DGamesBundle\Entity\Opinion $opinion)
+    {
+        $this->opinions->removeElement($opinion);
+    }
+
+    /**
+     * Get opinions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getOpinions()
+    {
+        return $this->opinions;
+    }
+
+    /**
+     * Get rate
+     *
+     * @return double
+     */
+    public function getRate()
+    {
+        $rate = 0;
+        foreach ($this->opinions as $opinion)
+        {
+            $rate += $opinion.getRate();
+        }
+        if ($rate != 0)
+            $rate /= $opinions->count;
+        return $rate;
     }
 }

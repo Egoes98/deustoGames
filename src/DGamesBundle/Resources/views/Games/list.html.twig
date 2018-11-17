@@ -1,19 +1,18 @@
 {# src/DGamesBundle/Resources/views/MainPage/list.html.twig #}
 
 {% extends "DGamesBundle::layout.html.twig" %}
-
-{% block title %}Main Page{% endblock %}
-
 {% block body %}
     {% for game in games %}
         <article class="game">
             <header>
-                <h2><a href=""></a>{{game.title}}-<a id="game_rate">{{game.rate}}</a></h2>
+                <h2><a href="game/{{game.id}}">{{game.title}}</a> - {{game.rate}}/10</h2>
             </header>
 			<div class="cover">
-				<img id="game_cover" src="{{game.cover}}" alt="">
+				<img id="game_cover" src="{# TODO #}" alt="">
 			</div>
-            <div class="date">{{game.date.format('d-m-Y')}}</div>
+            <div class="date">{{game.releasedate.format('d-m-Y')}}</div>
         </article>
     {% endfor %}
 {% endblock %}
+
+{% block title %}Main Page{% endblock %}

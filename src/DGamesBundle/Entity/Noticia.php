@@ -7,8 +7,9 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Noticia
  *
- * @ORM\Table(name="noticia")
+ * @ORM\Table()
  * @ORM\Entity(repositoryClass="DGamesBundle\Repository\NoticiaRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Noticia
 {
@@ -19,34 +20,33 @@ class Noticia
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="title", type="text")
      */
-    private $title;
+    protected $title;
 
     /**
      * @var string
      *
      * @ORM\Column(name="body", type="text")
      */
-    private $body;
+    protected $body;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="date", type="date")
      */
-    private $date;
-
+    protected $date;
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -125,4 +125,3 @@ class Noticia
         return $this->date;
     }
 }
-

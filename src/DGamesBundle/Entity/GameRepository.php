@@ -12,7 +12,7 @@ class GameRepository extends \Doctrine\ORM\EntityRepository
 {
     public function getLatestGames($limit = null)
     {
-        $qp = $this->createQueryBuilder('g')->select('g')->addOrderBy('g.date', 'DESC');
+        $qp = $this->createQueryBuilder('g')->select('g')->addOrderBy('g.releasedate', 'DESC');
 
         if (false === is_null($limit))
             $qp->setMaxResults($limit);
