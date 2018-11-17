@@ -5,7 +5,7 @@
     {% for game in games %}
         <article class="game">
             <header>
-                <h2><a href="game/{{game.id}}">{{game.title}}</a> - {{game.rate}}/10</h2>
+                <h2><a href="{{ path('d_games_show', { 'id': game.id }) }}">{{game.title}}</a> - {{game.rate}}/10</h2>
             </header>
 			<div class="cover">
 				<img id="game_cover" src="{# TODO #}" alt="">
