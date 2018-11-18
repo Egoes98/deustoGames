@@ -18,6 +18,8 @@
 {% block title %}Games{% endblock %}
 
 {% block sidebar %}
-    <h1>4 Most Popular Games<h1>
-	{# add the list of the 4 games with the best rating #}
+    <h1>4 Most Popular Games</h1>
+	{% for game in top %}
+        <div><a href="{{ path('d_games_show', { 'id': game.id }) }}">{{game.title}}</a> - {{game.rate|round(2, 'common')}}/10</div>
+    {% endfor %}
 {% endblock %}
