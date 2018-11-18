@@ -9,9 +9,9 @@ class GamesController extends Controller
     public function homepageAction() {
 		$games = $this->get('doctrine')->getManager()->getRepository("DGamesBundle:Game")->getLatestGames();
         $news = $this->get('doctrine')->getManager()->getRepository("DGamesBundle:Noticia")->getLatestNews();
-
+        $top = $this->get('doctrine')->getManager()->getRepository("DGamesBundle:Game")->getMostPopularGames();
 		
-		return $this->render('DGamesBundle:Games:homepage.html.twig', array('games' => $games, 'news' => $news));
+		return $this->render('DGamesBundle:Games:homepage.html.twig', array('games' => $games, 'news' => $news, 'top' => $top));
 	}
 	
 	public function listAction()
@@ -30,7 +30,7 @@ class GamesController extends Controller
             throw $this->createNotFoundException('No se ha encontrado el juego.');
         }
         $opinions = $this->get('doctrine')->getManager()->getRepository("DGamesBundle:Opinion")->getOpinionsForGame($id);
-
+       
         return $this->render('DGamesBundle:Games:show.html.twig', array('game' => $game, 'opinions' => $opinions));
 
     }
