@@ -7,10 +7,7 @@
 	<div class="cover"><img id="game_cover" class="game_cover" src="{{game.photo}}" alt="Game cover"></div>
 
 	<div class="body">
-		{{game.description}}
-		<section class="related" id="related_news">
-			{% include 'DGamesBundle:News:listNames.html.twig' with { 'news': game.news } %}
-		</section>
+		<p>{{game.description}}</p>
 		
 		<section class="opinions" id="opinions">
 			<section class="previous-opinions">

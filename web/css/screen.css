@@ -308,7 +308,8 @@ table tr td
 
 .game_cover {
 	width: 100%;
-	height: auto;
+    height: auto;
+    padding: 0 0 20px 0;
 }
 .cover {
 	width: 90%;
