@@ -8,12 +8,12 @@
         <article class="news">
             <div class="date"><time datetime="{{ item.date|date('c') }}">{{ item.date|date('l, F j, Y') }}</time></div>
             <header>
-                <h2><a href="{{ path('d_games_news', { 'id': item.id }) }}">{{ item.title }}</a></h2>
+                <h2><a href="{{ path('d_games_news_show', { 'id': item.id }) }}">{{ item.title }}</a></h2>
             </header>
 
             <div class="snippet">
                 <p>{{ item.body(200) }}</p>
-                <p class="continue"><a href="{{ path('d_games_news', { 'id': item.id }) }}">Read</a></p>
+                <p class="continue"><a href="{{ path('d_games_news_show', { 'id': item.id }) }}">Read</a></p>
             </div>
         </article>
     {% else %}

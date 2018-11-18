@@ -17,4 +17,12 @@ class NewsController extends Controller
         return $this->render('DGamesBundle:News:show.html.twig', array('news' => $new, 'opinions' => $opinions));
 
     }
+	
+	public function listAction()
+    {
+        $news = $this->get('doctrine')->getManager()->getRepository("DGamesBundle:Noticia")->getLatestNews();
+        
+		return $this->render('DGamesBundle:News:list.html.twig', array('news' => $news));
+    }
+	
 }

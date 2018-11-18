@@ -10,4 +10,14 @@ namespace DGamesBundle\Entity;
  */
 class NoticiaRepository extends \Doctrine\ORM\EntityRepository
 {
+	public function getLatestNews($limit = null)
+    {
+        $qp = $this->createQueryBuilder('n')->select('n')->addOrderBy('n.date', 'DESC');
+
+        if (false === is_null($limit))
+            $qp->setMaxResults($limit);
+
+        return $qp->getQuery()->getResult();
+    }
+	
 }
