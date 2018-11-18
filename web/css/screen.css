@@ -344,11 +344,6 @@ div.opinion_text{
     float: left;
 }
 
-.opinion_text{
-    min-height: 50px;
-    padding: 10px 0 0 0;
-}
-
 .username_text{
     padding: 0px;
     font-weight: bold;
