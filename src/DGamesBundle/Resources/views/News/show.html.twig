@@ -8,3 +8,10 @@
         {% include 'DGamesBundle:Games:listTitles.html.twig' with {'games': news.games} %}
     </section>
 {% endblock %}
+
+{% block sidebar %}
+    <h1>Related News<h1>
+	<section class="related" id="related_news">
+			{% include 'DGamesBundle:Games:listTitles.html.twig' with { 'games': news.games } %}
+	</section>
+{% endblock %}
