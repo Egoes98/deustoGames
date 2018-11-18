@@ -1,0 +1,10 @@
+{% extends "DGamesBundle::layout.html.twig" %}
+{% block title %}{{news.title}}{% endblock %}
+{% block body %}
+    <h1>{{news.title}}</h1>
+    <div class="date">{{news.date.format("d-m-Y")}}
+    <div class="body">{{news.body}}</div>
+    <section class="related" id="related_games">
+        {% include 'DGamesBundle:Games:listTitles.html.twig' with {'games': news.games} %}
+    </section>
+{% endblock %}

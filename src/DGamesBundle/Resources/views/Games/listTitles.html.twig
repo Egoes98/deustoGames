@@ -1,0 +1,3 @@
+{% for game in games %}
+    <p><a href="{{ path('d_games_show', { 'id': game.id }) }}">{{game.title}}</a></p>
+{% endfor %}

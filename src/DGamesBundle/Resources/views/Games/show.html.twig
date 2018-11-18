@@ -4,15 +4,15 @@
 {% block body %}
     <h1>{{game.title}} - {{game.rate}}/10</h1>
 	
-	<div class="cover"><img id="game_cover" src="{# TODO #}" alt=""></div>
+	<div class="cover"><img id="game_cover" src="{{game.cover}}" alt="Game cover"></div>
 
 	<div class="body">
 		{{game.description}}
-		<section class="related_news" id="related_news">
+		<section class="related" id="related_news">
 			{% include 'DGamesBundle:News:listNames.html.twig' with { 'news': game.news } %}
 		</section>
 		
-		<section class="opinions" id="opinios">
+		<section class="opinions" id="opinions">
 			<section class="previous-opinions">
 				<h3>Opinions</h3>
 				{% include 'DGamesBundle:Opinions:list.html.twig' with { 'opinions': opinions } %}
@@ -23,9 +23,4 @@
 		
 		<div class="date">{{game.releasedate.format('d-m-Y')}}</div>
 	</div>
-{% endblock %}
-
-{% block stylesheets %}
-{{ parent() }}
-<link href="{{ asset('css/blog.css') }}" type="text/css" rel="stylesheet" />
 {% endblock %}
