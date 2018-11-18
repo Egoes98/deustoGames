@@ -8,7 +8,8 @@
 
 	<div class="body">
 		<p>{{game.description}}</p>
-		
+	
+		<div class="date">Fecha de salida: {{game.releasedate.format('d-m-Y')}}</div>
 		<div class="opinions">
 			<div class="previous-opinions">
 				<h3>Opinions</h3>
@@ -18,7 +19,7 @@
 			</div>
 		</div>
 		
-		<div class="date">{{game.releasedate.format('d-m-Y')}}</div>
+		
 	</div>
 {% endblock %}
 

@@ -3,7 +3,7 @@
 {% extends "DGamesBundle::layout.html.twig" %}
 {% block body %}
 <div class="games">
-    {% for game in games %}
+    {% for game in games |slice(0,4) %}
         <article class="game">
             <header>
                 <h2><a href="{{ path('d_games_show', { 'id': game.id }) }}">{{game.title}}</a> - {{game.rate|round(2, 'common')}}/10</h2>
@@ -16,7 +16,7 @@
     {% endfor %}
 </div>
 <div class="news">
-	{% for new in news %}
+	{% for new in news |slice(0,4) %}
         <article class="noticia">
             <header>
                 <h2><a href="{{ path('d_games_news_show', { 'id': new.id }) }}">{{new.title}}</a></h2>
