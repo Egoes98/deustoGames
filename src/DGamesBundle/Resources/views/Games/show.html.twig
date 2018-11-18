@@ -24,3 +24,10 @@
 		<div class="date">{{game.releasedate.format('d-m-Y')}}</div>
 	</div>
 {% endblock %}
+
+{% block sidebar %}
+    <h1>Related News<h1>
+	<section class="related" id="related_news">
+			{% include 'DGamesBundle:News:listNames.html.twig' with { 'news': game.news } %}
+	</section>
+{% endblock %}
