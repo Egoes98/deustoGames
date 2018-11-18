@@ -15,9 +15,9 @@
 		<section class="opinions" id="opinios">
 			<section class="previous-opinions">
 				<h3>Opinions</h3>
-				{# include 'DGamesBundle:Opinions:list.html.twig' with { 'opinions': opnions } #}
+				{% include 'DGamesBundle:Opinions:list.html.twig' with { 'opinions': opinions } %}
 				<h3>Write an opinion</h3>
-		{#{ render(controller( 'DGamesBundle:Opinions:new', { 'game_id': game.id } )) }#}
+		{{ render(controller( 'DGamesBundle:Opinions:new', { 'game_id': game.id } )) }}
 			</section>
 		</section>
 		

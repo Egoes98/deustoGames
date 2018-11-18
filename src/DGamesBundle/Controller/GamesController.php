@@ -20,8 +20,9 @@ class GamesController extends Controller
         if (!$game) {
             throw $this->createNotFoundException('No se ha encontrado el juego.');
         }
+        $opinions = $this->get('doctrine')->getManager()->getRepository("DGamesBundle:Opinion")->getOpinionsForGame($id);
 
-        return $this->render('DGamesBundle:Games:show.html.twig', array('game' => $game, 'opinions' => null));
+        return $this->render('DGamesBundle:Games:show.html.twig', array('game' => $game, 'opinions' => $opinions));
 
     }
 }

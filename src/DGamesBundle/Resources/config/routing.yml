@@ -4,4 +4,15 @@ d_games_homepage:
 
 d_games_show:
     path: /game/{id}
-    defaults: { _controller: DGamesBundle:Games:show}
+    defaults: { _controller: DGamesBundle:Games:show }
+    
+d_games_news_show:
+    path: /news/{id}
+    defaults: { _controller: DGamesBundle:News:show }
+
+d_games_opinion_create:
+    path: /opinion/{game_id}
+    defaults: { _controller: DGamesBundle:Opinions:create }
+    requirements:
+        _method: POST
+        post_id: \d+
