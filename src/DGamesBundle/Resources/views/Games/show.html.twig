@@ -9,7 +9,7 @@
 	<div class="body">
 		{{game.description}}
 		<section class="related_news" id="related_news">
-			{# include 'DGamesBundle:News:list.html.twig' with { 'news': news } #}
+			{% include 'DGamesBundle:News:listNames.html.twig' with { 'news': game.news } %}
 		</section>
 		
 		<section class="opinions" id="opinios">

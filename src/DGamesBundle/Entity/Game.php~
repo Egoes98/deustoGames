@@ -34,10 +34,174 @@ class Game
     */
     protected $releasedate;
 
+	
     protected $rate;
+	
+	/**
+    * @ORM\Column(type="text")
+    */
+    protected $photo;
 
     /**
     * @ORM\OneToMany(targetEntity="Opinion", mappedBy="game")
     */
     protected $opinions;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Noticia", inversedBy="games")
+     * @ORM\JoinTable(name="games_news")
+     */
+    protected $news;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->opinions = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->news = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     *
+     * @return Game
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Game
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set releasedate
+     *
+     * @param \DateTime $releasedate
+     *
+     * @return Game
+     */
+    public function setReleasedate($releasedate)
+    {
+        $this->releasedate = $releasedate;
+
+        return $this;
+    }
+
+    /**
+     * Get releasedate
+     *
+     * @return \DateTime
+     */
+    public function getReleasedate()
+    {
+        return $this->releasedate;
+    }
+
+    /**
+     * Add opinion
+     *
+     * @param \DGamesBundle\Entity\Opinion $opinion
+     *
+     * @return Game
+     */
+    public function addOpinion(\DGamesBundle\Entity\Opinion $opinion)
+    {
+        $this->opinions[] = $opinion;
+
+        return $this;
+    }
+
+    /**
+     * Remove opinion
+     *
+     * @param \DGamesBundle\Entity\Opinion $opinion
+     */
+    public function removeOpinion(\DGamesBundle\Entity\Opinion $opinion)
+    {
+        $this->opinions->removeElement($opinion);
+    }
+
+    /**
+     * Get opinions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getOpinions()
+    {
+        return $this->opinions;
+    }
+	
+	/**
+     * Get photo
+     *
+     * @return string
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
+     * Get rate
+     *
+     * @return double
+     */
+    public function getRate()
+    {
+        $rate = 0;
+        foreach ($this->opinions as $opinion)
+        {
+            $rate += $opinion->getRate();
+        }
+        if ($rate != 0)
+            $rate /= $this->opinions->count();
+        return $rate;
+    }
 }

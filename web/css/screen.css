@@ -47,13 +47,17 @@ h5, h6
   letter-spacing: normal;
   padding: 0 0 15px 0;}
 
-a, a:hover
+a
 { outline: none;
-  text-decoration: underline;
-  color: #009FBC;}
+  text-decoration: none;
+  color: #009FBC;
+
+}
 
 a:hover
-{ text-decoration: none;}
+{ text-decoration: none;
+  color: #888;  
+}
 
 blockquote
 { margin: 20px 0; 

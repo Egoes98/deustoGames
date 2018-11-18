@@ -34,6 +34,11 @@ class Noticia
     protected $date;
 
     /**
+     * @ORM\ManyToMany(targetEntity="Game", mappedBy="news")
+     */
+    protected $games;
+
+    /**
      * Get id
      *
      * @return integer
@@ -113,5 +118,46 @@ class Noticia
     public function getDate()
     {
         return $this->date;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->games = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add game
+     *
+     * @param \DGamesBundle\Entity\Game $game
+     *
+     * @return Noticia
+     */
+    public function addGame(\DGamesBundle\Entity\Game $game)
+    {
+        $this->games[] = $game;
+
+        return $this;
+    }
+
+    /**
+     * Remove game
+     *
+     * @param \DGamesBundle\Entity\Game $game
+     */
+    public function removeGame(\DGamesBundle\Entity\Game $game)
+    {
+        $this->games->removeElement($game);
+    }
+
+    /**
+     * Get games
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getGames()
+    {
+        return $this->games;
     }
 }

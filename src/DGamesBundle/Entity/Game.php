@@ -46,12 +46,20 @@ class Game
     * @ORM\OneToMany(targetEntity="Opinion", mappedBy="game")
     */
     protected $opinions;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Noticia", inversedBy="games")
+     * @ORM\JoinTable(name="games_news")
+     */
+    protected $news;
+
     /**
      * Constructor
      */
     public function __construct()
     {
         $this->opinions = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->news = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -190,10 +198,60 @@ class Game
         $rate = 0;
         foreach ($this->opinions as $opinion)
         {
-            $rate += $opinion.getRate();
+            $rate += $opinion->getRate();
         }
         if ($rate != 0)
-            $rate /= $opinions->count;
+            $rate /= $this->opinions->count();
         return $rate;
+    }
+
+    /**
+     * Set photo
+     *
+     * @param string $photo
+     *
+     * @return Game
+     */
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
+
+        return $this;
+    }
+
+    /**
+     * Add news
+     *
+     * @param \DGamesBundle\Entity\Noticia $news
+     *
+     * @return Game
+     */
+    public function addNews(\DGamesBundle\Entity\Noticia $news)
+    {
+        $this->news[] = $news;
+        $news->addGame($this);
+
+        return $this;
+    }
+
+    /**
+     * Remove news
+     *
+     * @param \DGamesBundle\Entity\Noticia $news
+     */
+    public function removeNews(\DGamesBundle\Entity\Noticia $news)
+    {
+        $this->news->removeElement($news);
+        $news->removeGame($this);
+    }
+
+    /**
+     * Get news
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getNews()
+    {
+        return $this->news;
     }
 }
