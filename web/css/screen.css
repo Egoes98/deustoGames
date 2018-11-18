@@ -189,7 +189,7 @@ ul#menu li a:hover
 .sidebar_item
 { background: url(side_back.png) repeat-y;
   padding: 0 15px;
-  width: 192px;}
+  width: 200px;}
 
 .sidebar li a.selected
 { color: #444;} 
