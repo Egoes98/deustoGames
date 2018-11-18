@@ -25,10 +25,7 @@ class GameRepository extends \Doctrine\ORM\EntityRepository
         $qp = $this->createQueryBuilder('g')->select('g');
         $result = $qp->getQuery()->getResult();
         usort($result, array("DGamesBundle\Entity\GameRepository", "compare"));
-        if (count($result) <= 4)
-            return $result;
-        else
-            return array_slice($result, 0, 4);
+        return $result;
     }
     
     private function compare($a, $b)
