@@ -321,4 +321,42 @@ table tr td
 
 .opinions {
 	background: #E5E5DB;
+    padding: 10px;
+}
+
+div.body {
+    width: 100%;
+}
+
+article.opinion{
+    display: flex;
+}
+div.user{
+    flex: 20%;
+}
+
+div.opinion_text{
+    flex: 80%;
+}
+
+.username{
+    width: 20%;
+    float: left;
+}
+
+.opinion_text{
+    min-height: 50px;
+    padding: 10px 0 0 0;
+}
+
+.username_text{
+    padding: 0px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#game_rate{
+    padding: 0px;
+    font-size: 24px;
+    color: #009FBC;
 }

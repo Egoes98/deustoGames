@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-11-2018 a las 21:35:33
+-- Tiempo de generación: 18-11-2018 a las 18:10:29
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 7.2.10
 
@@ -49,6 +49,25 @@ INSERT INTO `game` (`id`, `title`, `description`, `releasedate`, `photo`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `games_news`
+--
+
+CREATE TABLE `games_news` (
+  `game_id` int(11) NOT NULL,
+  `noticia_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `games_news`
+--
+
+INSERT INTO `games_news` (`game_id`, `noticia_id`) VALUES
+(1, 2),
+(4, 2);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `noticia`
 --
 
@@ -84,6 +103,16 @@ CREATE TABLE `opinion` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
+-- Volcado de datos para la tabla `opinion`
+--
+
+INSERT INTO `opinion` (`id`, `game_id`, `user`, `opinion`, `rate`, `date`) VALUES
+(2, 4, 'alvaroh', 'Uno de los videojuegos que mas he disfrutado en toda mi vida.', 10, '2018-11-17'),
+(3, 3, 'alvaroh', 'Una maravilla de juego, tanto visual como jugable. Lo que mas me ha gustado es la ambientacion.', 9, '2018-11-18'),
+(4, 2, 'alvaroh', 'Un gran juego que consigue contar una buena historia con personajes bien escritos y sobretodo la mecanica de poder dar marcha atras en el tiempo para poder cambiar las decisiones que hacemos.', 9, '2018-11-18'),
+(5, 1, 'alvaroh', 'Un juego bastante divertido y solido que consigue llevar al jugador novato en la saga la experiencia de Monster Hunter. Pero, en cambio para el jugador \"veterano\" en la saga (entre los que me incluyo) puede parecerle poco contenido, ya que los anteriores conseguian dar un endgame mucho mas extenso que este.', 8, '2018-11-18');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -92,6 +121,14 @@ CREATE TABLE `opinion` (
 --
 ALTER TABLE `game`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `games_news`
+--
+ALTER TABLE `games_news`
+  ADD PRIMARY KEY (`game_id`,`noticia_id`),
+  ADD KEY `IDX_2AB5589E48FD905` (`game_id`),
+  ADD KEY `IDX_2AB558999926010` (`noticia_id`);
 
 --
 -- Indices de la tabla `noticia`
@@ -126,11 +163,18 @@ ALTER TABLE `noticia`
 -- AUTO_INCREMENT de la tabla `opinion`
 --
 ALTER TABLE `opinion`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `games_news`
+--
+ALTER TABLE `games_news`
+  ADD CONSTRAINT `FK_2AB558999926010` FOREIGN KEY (`noticia_id`) REFERENCES `noticia` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `FK_2AB5589E48FD905` FOREIGN KEY (`game_id`) REFERENCES `game` (`id`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `opinion`

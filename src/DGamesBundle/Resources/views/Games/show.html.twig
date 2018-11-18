@@ -2,7 +2,7 @@
 {% block title %}{{game.title}}{% endblock %}
 
 {% block body %}
-    <h1>{{game.title}} - {{game.rate}}/10</h1>
+    <h1>{{game.title}} - {{game.rate|round(2, 'common')}}/10</h1>
 	
 	<div class="cover"><img id="game_cover" class="game_cover" src="{{game.photo}}" alt="Game cover"></div>
 
