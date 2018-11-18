@@ -4,13 +4,10 @@
     <h1>{{news.title}}</h1>
     <div class="date">{{news.date.format("d-m-Y")}}</div>
     <div class="body">{{news.body}}</div>
-    <section class="related" id="related_games">
-        {% include 'DGamesBundle:Games:listTitles.html.twig' with {'games': news.games} %}
-    </section>
 {% endblock %}
 
 {% block sidebar %}
-    <h1>Related News<h1>
+    <h1>Related Games<h1>
 	<section class="related" id="related_news">
 			{% include 'DGamesBundle:Games:listTitles.html.twig' with { 'games': news.games } %}
 	</section>
