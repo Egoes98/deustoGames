@@ -298,13 +298,6 @@ table tr td
 { background: #E5E5DB;
   color: #47433F;
   border-top: 1px solid #FFF;}
-  
-#content{
-	display: flex;
-	justify-content: space-between;
-	width: 600px;
-	flex-wrap: wrap;
-}
 
 .game_cover {
 	width: 100%;
@@ -329,7 +322,7 @@ div.body {
     width: 100%;
 }
 
-article.opinion{
+div.opinion{
     display: flex;
 }
 div.user{
@@ -351,8 +344,16 @@ div.opinion_text{
     font-size: 14px;
 }
 
-#game_rate{
+.game_rate{
     padding: 0px;
     font-size: 24px;
     color: #009FBC;
+}
+
+div.games{
+    padding: 0 0 20px 0;
+    display: flex;
+	justify-content: space-between;
+	width: 600px;
+	flex-wrap: wrap;
 }

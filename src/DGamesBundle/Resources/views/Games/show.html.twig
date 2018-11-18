@@ -4,19 +4,19 @@
 {% block body %}
     <h1>{{game.title}} - {{game.rate|round(2, 'common')}}/10</h1>
 	
-	<div class="cover"><img id="game_cover" class="game_cover" src="{{game.photo}}" alt="Game cover"></div>
+	<div class="cover"><img class="game_cover" src="{{game.photo}}" alt="Game cover"></div>
 
 	<div class="body">
 		<p>{{game.description}}</p>
 		
-		<section class="opinions" id="opinions">
-			<section class="previous-opinions">
+		<div class="opinions">
+			<div class="previous-opinions">
 				<h3>Opinions</h3>
 				{% include 'DGamesBundle:Opinions:list.html.twig' with { 'opinions': opinions } %}
 				<h3>Write an opinion</h3>
 		{{ render(controller( 'DGamesBundle:Opinions:new', { 'game_id': game.id } )) }}
-			</section>
-		</section>
+			</div>
+		</div>
 		
 		<div class="date">{{game.releasedate.format('d-m-Y')}}</div>
 	</div>
@@ -24,7 +24,7 @@
 
 {% block sidebar %}
     <h1>Related News</h1>
-	<section class="related" id="related_news">
+	<div class="related" id="related_news">
 			{% include 'DGamesBundle:News:listNames.html.twig' with { 'news': game.news } %}
-	</section>
+	</div>
 {% endblock %}

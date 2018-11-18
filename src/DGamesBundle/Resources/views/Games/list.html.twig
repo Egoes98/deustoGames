@@ -5,10 +5,10 @@
     {% for game in games %}
         <article class="game">
             <header>
-                <h2><a id="game_name" href="{{ path('d_games_show', { 'id': game.id }) }}">{{game.title}}</a> - {{game.rate|round(2, 'common')}}/10</h2>
+                <h2><a href="{{ path('d_games_show', { 'id': game.id }) }}">{{game.title}}</a> - {{game.rate|round(2, 'common')}}/10</h2>
             </header>
 			<div class="cover">
-				<img id="game_cover" class="game_cover" src="{{game.photo}}" alt="Game cover">
+				<img class="game_cover" src="{{game.photo}}" alt="Game cover">
 			</div>
             <div class="date">{{game.releasedate.format('d-m-Y')}}</div>
         </article>
