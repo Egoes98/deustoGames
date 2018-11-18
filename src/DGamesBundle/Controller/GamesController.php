@@ -6,7 +6,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class GamesController extends Controller
 {
-    public function listAction()
+    public function homepageAction() {
+		$games = $this->get('doctrine')->getManager()->getRepository("DGamesBundle:Game")->getLatestGames();
+        $news = $this->get('doctrine')->getManager()->getRepository("DGamesBundle:Noticia")->getLatestNews();
+		
+		return $this->render('DGamesBundle:Games:homepage.html.twig', array('games' => $games, 'news' => $news));
+	}
+	
+	public function listAction()
     {
         $games = $this->get('doctrine')->getManager()->getRepository("DGamesBundle:Game")->getLatestGames();
         $opinions = $this->get('doctrine')->getManager()->getRepository("DGamesBundle:Opinion");

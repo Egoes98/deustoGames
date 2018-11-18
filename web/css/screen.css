@@ -306,10 +306,15 @@ table tr td
 	flex-wrap: wrap;
 }
 
-#game_cover{
-	width: 25%;
+.game_cover {
+	width: 100%;
 	height: auto;
 }
+.cover {
+	width: 90%;
+	height: auto;
+}
+
 .game{
 	width: 300px;
 }

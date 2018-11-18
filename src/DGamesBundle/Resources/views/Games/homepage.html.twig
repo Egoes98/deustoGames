@@ -1,0 +1,32 @@
+{# src/DGamesBundle/Resources/views/MainPage/list.html.twig #}
+
+{% extends "DGamesBundle::layout.html.twig" %}
+{% block body %}
+    {% for game in games %}
+        <article class="game">
+            <header>
+                <h2><a href="{{ path('d_games_show', { 'id': game.id }) }}">{{game.title}}</a> - {{game.rate|round(2, 'common')}}/10</h2>
+            </header>
+			<div class="cover">
+				<img id="game_cover" class="game_cover" src="{{game.photo}}" alt="Game cover">
+			</div>
+            <div class="date">{{game.releasedate.format('d-m-Y')}}</div>
+        </article>
+    {% endfor %}
+	
+	{% for new in news %}
+        <article class="noticia">
+            <header>
+                <h2><a href="{{ path('d_games_news_show', { 'id': new.id }) }}">{{new.title}}</a></h2>
+            </header>
+			<div class="snippet">
+                <p>{{ new.body(200) }}</p>
+                <p class="continue"><a href="{{ path('d_games_news_show', { 'id': new.id }) }}">Read</a></p>
+            </div>
+            <div class="date">{{new.date.format('d-m-Y')}}</div>
+        </article>
+    {% endfor %}
+	
+{% endblock %}
+
+{% block title %}Main Page{% endblock %}

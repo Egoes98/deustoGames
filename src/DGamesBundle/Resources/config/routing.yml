@@ -1,15 +1,19 @@
 d_games_homepage:
     path:     /
+    defaults: { _controller: DGamesBundle:Games:homepage }
+
+d_games_list:
+    path: /games
     defaults: { _controller: DGamesBundle:Games:list }
+
+d_games_show:
+    path: /game/{id}
+    defaults: { _controller: DGamesBundle:Games:show }
 
 d_games_news_list:
     path: /news/
     defaults: { _controller: DGamesBundle:News:list }
-    
-d_games_show:
-    path: /game/{id}
-    defaults: { _controller: DGamesBundle:Games:show }
-    
+
 d_games_news_show:
     path: /news/{id}
     defaults: { _controller: DGamesBundle:News:show }
