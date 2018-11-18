@@ -11,7 +11,7 @@ class GamesController extends Controller
         $news = $this->get('doctrine')->getManager()->getRepository("DGamesBundle:Noticia")->getLatestNews();
 
 		
-		return $this->render('DGamesBundle:Games:homepage.html.twig', array('games' => $games, 'news' => $news, 'top' => $top));
+		return $this->render('DGamesBundle:Games:homepage.html.twig', array('games' => $games, 'news' => $news));
 	}
 	
 	public function listAction()
