@@ -1,0 +1,22 @@
+
+{% extends "DGamesBundle::layout.html.twig" %}
+
+{% block title %}News{% endblock %}
+
+{% block body %}
+    {% for item in news %}
+        <article class="news">
+            <div class="date"><time datetime="{{ item.date|date('c') }}">{{ item.date|date('l, F j, Y') }}</time></div>
+            <header>
+                <h2><a href="{{ path('d_games_news', { 'id': item.id }) }}">{{ item.title }}</a></h2>
+            </header>
+
+            <div class="snippet">
+                <p>{{ item.body(200) }}</p>
+                <p class="continue"><a href="{{ path('d_games_news', { 'id': item.id }) }}">Read</a></p>
+            </div>
+        </article>
+    {% else %}
+        <p>No hay entradas en este blog</p>
+    {% endfor %}
+{% endblock %}
