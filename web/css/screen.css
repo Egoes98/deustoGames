@@ -308,8 +308,12 @@ table tr td
 
 #game_cover{
 	width: 25%;
-	height: 25%;
+	height: auto;
 }
 .game{
 	width: 300px;
+}
+
+.opinions {
+	background: #E5E5DB;
 }
