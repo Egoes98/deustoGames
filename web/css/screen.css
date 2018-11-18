@@ -355,7 +355,7 @@ div.opinion_text{
 }
 
 div.games{
-    padding: 0 0 0px 0;
+    padding: 0 0 20px 0;
     display: flex;
 	justify-content: space-between;
 	width: 650px;
