@@ -20,7 +20,7 @@
                 <h2><a href="{{ path('d_games_news_show', { 'id': new.id }) }}">{{new.title}}</a></h2>
             </header>
 			<div class="snippet">
-                <p>{{ new.body(200) }}</p>
+                <p>{{ new.body|length > 200 ? new.body|slice(0, 200) ~ '...' : new.body  }}</p>
                 <p class="continue"><a href="{{ path('d_games_news_show', { 'id': new.id }) }}">Read</a></p>
             </div>
             <div class="date">{{new.date.format('d-m-Y')}}</div>

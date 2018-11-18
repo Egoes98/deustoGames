@@ -12,7 +12,7 @@
             </header>
 
             <div class="snippet">
-                <p>{{ item.body(200) }}</p>
+                <p>{{ new.body|length > 200 ? new.body|slice(0, 200) ~ '...' : new.body  }}</p>
                 <p class="continue"><a href="{{ path('d_games_news_show', { 'id': item.id }) }}">Read</a></p>
             </div>
         </article>
