@@ -9,15 +9,17 @@ class GamesController extends Controller
     public function homepageAction() {
 		$games = $this->get('doctrine')->getManager()->getRepository("DGamesBundle:Game")->getLatestGames();
         $news = $this->get('doctrine')->getManager()->getRepository("DGamesBundle:Noticia")->getLatestNews();
+
 		
-		return $this->render('DGamesBundle:Games:homepage.html.twig', array('games' => $games, 'news' => $news));
+		return $this->render('DGamesBundle:Games:homepage.html.twig', array('games' => $games, 'news' => $news, 'top' => $top));
 	}
 	
 	public function listAction()
     {
         $games = $this->get('doctrine')->getManager()->getRepository("DGamesBundle:Game")->getLatestGames();
-        $opinions = $this->get('doctrine')->getManager()->getRepository("DGamesBundle:Opinion");
-		return $this->render('DGamesBundle:Games:list.html.twig', array('games' => $games));
+        $top = $this->get('doctrine')->getManager()->getRepository("DGamesBundle:Game")->getMostPopularGames();
+        
+		return $this->render('DGamesBundle:Games:list.html.twig', array('games' => $games, 'top' => $top));
 		
     }
 

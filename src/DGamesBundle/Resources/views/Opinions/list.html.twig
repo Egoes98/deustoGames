@@ -3,10 +3,8 @@
 {% for opinion in opinions %}
     <div class="opinion" id="opinion-{{ opinion.id }}">
         <div class="user">
-        <header class="username">
             <p class="username_text"><span class="highlight">{{ opinion.user }}</span></p>
             <p class="game_rate">{{ opinion.rate }}</p>
-        </header>
         </div>
         <div class="opinion_text">
         <p>{{ opinion.opinion }}</p>
