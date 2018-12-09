@@ -6,7 +6,7 @@ jQuery(document).ready(function () {
 	var game_cover = jQuery(".game_cover")
 	var original_game_cover_width = game_cover.css("width");
 	game_cover.hover(function () {
-		jQuery(this).animate({width: "90%"});
+		jQuery(this).animate({width: "80%"});
 	},
 	function () {
 		jQuery(this).animate({width: original_game_cover_width});
