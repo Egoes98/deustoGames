@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>Release Date:</source>
+                <target>Fecha de Salida:</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>Opinions</source>
+                <target>Opiniones</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>Write an opinion</source>
+                <target>Escribe una opinión</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>Opinion</source>
+                <target>Opinión</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>User</source>
+                <target>Usuario</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>Rating (out of 10)</source>
+                <target>Puntuación (sobre 10)</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>Send</source>
+                <target>Enviar</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>Add an opinion to the game</source>
+                <target>Añade una opinión al juego</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>Home</source>
+                <target>Inicio</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>News</source>
+                <target>Noticias</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>Games</source>
+                <target>Juegos</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>Contact Us</source>
+                <target>Contacta con nosotros</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>Date</source>
+                <target>Fecha</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>Read</source>
+                <target>Leer</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>Main Page</source>
+                <target>Página Principal</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>4 Most Popular Games</source>
+                <target>Los 4 juegos más populares</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>There are no entries in this blog</source>
+                <target>No hay entradas en este blog</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>There are no news for this game</source>
+                <target>No hay noticias para este juego</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>Related Games</source>
+                <target>Juegos Relacionados</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>There are not opinions yet</source>
+                <target>Todavia no hay opiniones</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>"Send"</source>
+                <target>"Enviar"</target>
+            </trans-unit>
+
+        </body>
+    </file>
+</xliff>

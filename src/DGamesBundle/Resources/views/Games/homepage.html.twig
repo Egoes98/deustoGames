@@ -11,7 +11,7 @@
 			<div class="cover">
 				<img class="game_cover" src="{{game.photo}}" alt="Game cover">
 			</div>
-             <div class="date">Release Date: {{game.releasedate.format('d-m-Y')}}</div>
+             <div class="date">{% trans %}Release Date:{% endtrans %} {{game.releasedate.format('d-m-Y')}}</div>
         </article>
     {% endfor %}
 </div>
@@ -21,20 +21,20 @@
             <header>
                 <h2><a href="{{ path('d_games_news_show', { 'id': new.id }) }}">{{new.title}}</a></h2>
             </header>
-            <div class="date">Date: {{new.date.format('d-m-Y')}}</div>
+            <div class="date">{% trans %}Date{% endtrans %}: {{new.date.format('d-m-Y')}}</div>
 			<div class="snippet">
                 <p>{{ new.body|length > 200 ? new.body|slice(0, 200) ~ '...' : new.body  }}</p>
-                <p class="continue"><a href="{{ path('d_games_news_show', { 'id': new.id }) }}">Read</a></p>
+                <p class="continue"><a href="{{ path('d_games_news_show', { 'id': new.id }) }}">{% trans %}Read{% endtrans %}</a></p>
             </div>
         </article>
     {% endfor %}
 </div>
 {% endblock %}
 
-{% block title %}Main Page{% endblock %}
+{% block title %}{% trans %}Main Page{% endtrans %}{% endblock %}
 
 {% block sidebar %}
-    <h1>4 Most Popular Games</h1>
+    <h1>{% trans %}4 Most Popular Games{% endtrans %}</h1>
 	{% for game in top|slice(0, 4) %}
         <div><a href="{{ path('d_games_show', { 'id': game.id }) }}">{{game.title}}</a> - {{game.rate|round(2, 'common')}}/10</div>
     {% endfor %}

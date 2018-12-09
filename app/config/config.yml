@@ -11,6 +11,7 @@ parameters:
 
 framework:
     #esi: ~
+    translator: { fallbacks: [en] }
     #translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
     router:
@@ -20,7 +21,9 @@ framework:
     csrf_protection: ~
     validation: { enable_annotations: true }
     #serializer: { enable_annotations: true }
-    default_locale: '%locale%'
+    default_locale: es
+    #default_locale: '%locale%'
+
     trusted_hosts: ~
     session:
         # https://symfony.com/doc/current/reference/configuration/framework.html#handler-id
