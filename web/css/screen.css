@@ -361,3 +361,7 @@ div.games{
 	width: 650px;
 	flex-wrap: wrap;
 }
+
+.snippet {
+  display: none;
+}

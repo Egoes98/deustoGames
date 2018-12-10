@@ -3,14 +3,19 @@
 
 {% block title %}News{% endblock %}
 
+{% block javascripts %}
+    {{parent()}}
+    <script src="{{ asset('js/list_news.js') }}"></script>
+{% endblock %}
+
 {% block body %}
     {% for item in news %}
         <article class="news">
-            <div class="date"><time datetime="{{ item.date|date('c') }}">{{ item.date|date('l, F j, Y') }}</time></div>
             <header>
                 <h2><a href="{{ path('d_games_news_show', { 'id': item.id }) }}">{{ item.title }}</a></h2>
             </header>
-
+            <div class="date"><time datetime="{{ item.date|date('c') }}">{{ item.date|date('l, F j, Y') }}</time></div>
+            
             <div class="snippet">
                 <p>{{ item.body|length > 200 ? item.body|slice(0, 200) ~ '...' : item.body  }}</p>
                 <p class="continue"><a href="{{ path('d_games_news_show', { 'id': item.id }) }}">{% trans %}Read{% endtrans %}</a></p>
