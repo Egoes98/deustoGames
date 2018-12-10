@@ -1,90 +1,90 @@
 <?xml version="1.0"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" datatype="plaintext" original="file.ext">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
         <body>
             <trans-unit id="text_release_date">
                 <source>text.release_date</source>
-                <target>Fecha de Salida</target>
+                <target>Release Date</target>
             </trans-unit>
             <trans-unit id="text_opinions">
                 <source>text.opinions</source>
-                <target>Opiniones</target>
+                <target>Opinions</target>
             </trans-unit>
             <trans-unit id="text_write">
                 <source>text.write</source>
-                <target>Escribe una opinión</target>
+                <target>Write an opinion</target>
             </trans-unit>
             <trans-unit id="text_opinion">
                 <source>text.opinion</source>
-                <target>Opinión</target>
+                <target>Opinion</target>
             </trans-unit>
             <trans-unit id="text_user">
                 <source>text.user</source>
-                <target>Usuario</target>
+                <target>User</target>
             </trans-unit>
             <trans-unit id="text_rating">
                 <source>text.rating</source>
-                <target>Puntuación (sobre 10)</target>
+                <target>Rating (out of 10)</target>
             </trans-unit>
             <trans-unit id="text_add">
                 <source>text.add</source>
-                <target>Añade una opinión al juego</target>
+                <target>Add an opinion to the game</target>
             </trans-unit>
             <trans-unit id="text_home">
                 <source>text.home</source>
-                <target>Inicio</target>
+                <target>Home</target>
             </trans-unit>
             <trans-unit id="text_news">
                 <source>text.news</source>
-                <target>Noticias</target>
+                <target>News</target>
             </trans-unit>
             <trans-unit id="text_games">
                 <source>text.games</source>
-                <target>Juegos</target>
+                <target>Games</target>
             </trans-unit>
             <trans-unit id="text_contact">
                 <source>text.contact</source>
-                <target>Contacta con nosotros</target>
+                <target>Contact Us</target>
             </trans-unit>
             <trans-unit id="text_date">
                 <source>text.date</source>
-                <target>Fecha</target>
+                <target>Date</target>
             </trans-unit>
             <trans-unit id="text_read">
                 <source>text.read</source>
-                <target>Leer</target>
+                <target>Read</target>
             </trans-unit>
             <trans-unit id="text_main">
                 <source>text.main</source>
-                <target>Página Principal</target>
+                <target>Main Page</target>
             </trans-unit>
             <trans-unit id="text_popular">
                 <source>text.popular</source>
-                <target>Los 4 juegos más populares</target>
+                <target>4 Most Popular Games</target>
             </trans-unit>
             <trans-unit id="text_no_entries">
                 <source>text.no_entries</source>
-                <target>No hay entradas en este blog</target>
+                <target>There are no entries in this blog</target>
             </trans-unit>
             <trans-unit id="text_no_news">
                 <source>text.no_news</source>
-                <target>No hay noticias para este juego</target>
+                <target>There are no news for this game</target>
             </trans-unit>
             <trans-unit id="text_related_games">
                 <source>text.related_games</source>
-                <target>Juegos Relacionados</target>
+                <target>Related Games</target>
             </trans-unit>
             <trans-unit id="text_no_opinions">
                 <source>text.no_opinions</source>
-                <target>There are not opinions yet</target>
+                <target>Todavia no hay opiniones</target>
             </trans-unit>
             <trans-unit id="text_send">
                 <source>text.send</source>
-                <target>"Enviar"</target>
+                <target>"Send"</target>
             </trans-unit>
             <trans-unit id="text_related_news">
                 <source>text.related_news</source>
-                <target>Noticias Relacionadas</target>
+                <target>Related Games</target>
             </trans-unit>
         </body>
     </file>

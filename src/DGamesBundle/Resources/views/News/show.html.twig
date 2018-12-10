@@ -2,12 +2,12 @@
 {% block title %}{{news.title}}{% endblock %}
 {% block body %}
     <h1>{{news.title}}</h1>
-    <div class="date">{% trans %}Date{% endtrans %}: {{news.date.format("d-m-Y")}}</div>
+    <div class="date">{% trans %}text.date{% endtrans %}: {{news.date.format("d-m-Y")}}</div>
     <div class="body">{{news.body}}</div>
 {% endblock %}
 
 {% block sidebar %}
-	<h2>{% trans %}Related Games{% endtrans %}</h2>
+	<h2>{% trans %}text.related_games{% endtrans %}</h2>
 	<div class="related" id="related_games">
 		{% include 'DGamesBundle:Games:listTitles.html.twig' with { 'games': news.games } %}
 	</div>

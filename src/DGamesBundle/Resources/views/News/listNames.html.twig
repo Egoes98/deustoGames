@@ -1,5 +1,5 @@
 {% for item in news %}
     <p><a href="{{ path('d_games_news_show', { 'id': item.id }) }}">{{item.title}}</a></p>
 {% else %}
-    <p>{% trans %}There are no news for this game{% endtrans %}</p>
+    <p>{% trans %}text.no_news{% endtrans %}</p>
 {% endfor %}

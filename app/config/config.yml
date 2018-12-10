@@ -7,12 +7,11 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: es
 
 framework:
     #esi: ~
-    translator: { fallbacks: [en] }
-    #translator: { fallbacks: ['%locale%'] }
+    translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
     router:
         resource: '%kernel.project_dir%/app/config/routing.yml'
@@ -21,8 +20,7 @@ framework:
     csrf_protection: ~
     validation: { enable_annotations: true }
     #serializer: { enable_annotations: true }
-    default_locale: es
-    #default_locale: '%locale%'
+    default_locale: '%locale%'
 
     trusted_hosts: ~
     session:

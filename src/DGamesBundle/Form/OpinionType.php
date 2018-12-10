@@ -15,10 +15,10 @@ class OpinionType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('user', TextType::class, array('label' => 'User'))->add('opinion', null, array('label' => 'Opinion'));
+        $builder->add('user', TextType::class, array('label' => 'text.user'))->add('opinion', null, array('label' => 'text.opinion'));
         $builder->add('rate', ChoiceType::class,
             array(
-                'label' => 'Rating (out of 10)',
+                'label' => 'text.rating',
                 'choices' => array(
                     '0' => 0,
                     '1' => 1,

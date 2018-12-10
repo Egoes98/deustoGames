@@ -14,12 +14,12 @@
 	<div class="body">
 		<p>{{game.description}}</p>
 	
-		<div class="date">Release Date: {{game.releasedate.format('d-m-Y')}}</div>
+		<div class="date">{% trans %}text.release_date{% endtrans %}: {{game.releasedate.format('d-m-Y')}}</div>
 		<div class="opinions">
 			<div class="previous-opinions">
-				<h3>Opinions</h3>
+				<h3>{% trans %}text.opinions{% endtrans %}</h3>
 				{% include 'DGamesBundle:Opinions:list.html.twig' with { 'opinions': opinions } %}
-				<h3>Write an opinion</h3>
+				<h3>{% trans %}text.write{% endtrans %}</h3>
 		{{ render(controller( 'DGamesBundle:Opinions:new', { 'game_id': game.id } )) }}
 			</div>
 		</div>
@@ -29,7 +29,7 @@
 {% endblock %}
 
 {% block sidebar %}
-    <h1>Related News</h1>
+    <h1>{% trans %}text.related_news{% endtrans %}</h1>
 	<div class="related" id="related_news">
 			{% include 'DGamesBundle:News:listNames.html.twig' with { 'news': game.news } %}
 	</div>
