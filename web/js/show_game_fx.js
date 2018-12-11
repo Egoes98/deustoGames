@@ -25,13 +25,25 @@ jQuery(document).ready(function () {
 	
 	jQuery("p a.new").hover( function () {
 		var href = jQuery(this);
+		
+		var news_body = href.parent().siblings(".body");
+		
 		var url = "http://localhost" + href.attr("href");
 		var data;
 		jQuery.get(url, function (data) {
+			
+			
 			var downloaded_page = jQuery(data);
 			var news_body = downloaded_page.find(".body");
+			
+			
 			href.parent().after(news_body);
-			console.log(downloaded_page.get);			
+			
+			
+			
+			//console.log(downloaded_page.get);			
 		});
+		
+		href.unbind();
 	}, function () {});
 });
