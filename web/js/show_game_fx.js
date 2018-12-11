@@ -1,3 +1,4 @@
+
 var game_cover;
 
 function game_cover_bigger() {
@@ -7,20 +8,21 @@ function game_cover_bigger() {
 }
 
 function game_cover_smaller() {
-	jQuery(this).stop().animate({width: "50%"});
+	game_cover.stop().animate({width: "50%"});
 	game_cover.unbind("click");
 	game_cover.click(game_cover_bigger);
 }
+
 
 jQuery(document).ready(function () {
 	// Give a different style to even comments
 	jQuery(".opinion:even").css("background", "#eee");
 	
 	// Change size of the game cover when hovering with mouse
-	game_cover = jQuery(".game_cover")
-	original_game_cover_width = game_cover.css("width");
+	game_cover = jQuery(".game_cover");
 	
 	game_cover.click(game_cover_bigger);
+	
 	jQuery("p a.new").hover( function () {
 		var href = jQuery(this);
 		var url = "http://localhost" + href.attr("href");
@@ -31,5 +33,5 @@ jQuery(document).ready(function () {
 			href.parent().after(news_body);
 			console.log(downloaded_page.get);			
 		});
-	}, function () {/* Do nothing */});
+	}, function () {});
 });
