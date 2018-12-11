@@ -21,4 +21,15 @@ jQuery(document).ready(function () {
 	original_game_cover_width = game_cover.css("width");
 	
 	game_cover.click(game_cover_bigger);
+	jQuery("p a.new").hover( function () {
+		var href = jQuery(this);
+		var url = "http://localhost" + href.attr("href");
+		var data;
+		jQuery.get(url, function (data) {
+			var downloaded_page = jQuery(data);
+			var news_body = downloaded_page.find(".body");
+			href.parent().after(news_body);
+			console.log(downloaded_page.get);			
+		});
+	}, function () {/* Do nothing */});
 });
