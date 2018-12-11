@@ -28,7 +28,7 @@ jQuery(document).ready(function () {
 		
 		var news_body = href.parent().siblings(".body");
 		
-		var url = "http://localhost" + href.attr("href");
+		var url = href.attr("href");
 		var data;
 		jQuery.get(url, function (data) {
 			
