@@ -36,8 +36,10 @@ jQuery(document).ready(function () {
 			var downloaded_page = jQuery(data);
 			var news_body = downloaded_page.find(".body");
 			
+			var text = news_body.html().substring(0, 150) + "...";
 			
-			href.parent().after(news_body);
+			
+			href.parent().after(text);
 			
 			
 			
