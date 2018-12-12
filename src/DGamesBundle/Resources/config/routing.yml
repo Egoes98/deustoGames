@@ -1,26 +1,39 @@
 d_games_homepage:
-    path:     /
-    defaults: { _controller: DGamesBundle:Games:homepage }
+    path:     /{_locale}/
+    defaults: { _controller: DGamesBundle:Games:homepage, _locale: en }
+    requirements:
+        _locale: es|en
 
 d_games_list:
-    path: /games
-    defaults: { _controller: DGamesBundle:Games:list }
+    path: /{_locale}/games
+    defaults: { _controller: DGamesBundle:Games:list, _locale: en }
+    requirements:
+        _locale: es|en
 
 d_games_show:
-    path: /game/{id}
-    defaults: { _controller: DGamesBundle:Games:show }
+    path: /{_locale}/game/{id}
+    defaults: { _controller: DGamesBundle:Games:show, _locale: en }
+    requirements:
+        _locale: es|en
 
 d_games_news_list:
-    path: /news/
-    defaults: { _controller: DGamesBundle:News:list }
+    path: /{_locale}/news/
+    defaults: { _controller: DGamesBundle:News:list, _locale: en }
+    requirements:
+        _locale: es|en
 
 d_games_news_show:
-    path: /news/{id}
-    defaults: { _controller: DGamesBundle:News:show }
+    path: /{_locale}/news/{id}
+    defaults: { _controller: DGamesBundle:News:show, _locale: en }
+    requirements:
+        _locale: es|en
 
 d_games_opinion_create:
-    path: /opinion/{game_id}
-    defaults: { _controller: DGamesBundle:Opinions:create }
+    path: /{_locale}/opinion/{game_id}
+    defaults: { _controller: DGamesBundle:Opinions:create, _locale: en }
     requirements:
         _method: POST
         post_id: \d+
+        _locale: es|en
+        
+

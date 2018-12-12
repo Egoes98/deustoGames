@@ -54,9 +54,10 @@
     <div id="content_footer"></div>
     <div id="footer">
 	{% block footer %}
-      <p><a href="/">{% trans %}text.home{% endtrans %}</a> | <a href="contact.html">{% trans %}text.contact{% endtrans %}</a></p>
-      <p>Copyright &copy; textured_orbs | <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.html5webtemplates.co.uk">Website templates</a></p>
-	{% endblock %}
+      <p><a href="/">{% trans %}text.home{% endtrans %}</a> | <a href="contact.html">{% trans %}text.contact{% endtrans %}</a> | <a href="http://www.html5webtemplates.co.uk">Website templates</a> | <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'es'})) }}">Español</a> | <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}">English</a></p>
+      <p>Copyright &copy; textured_orbs | <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a></p>
+
+  {% endblock %}
     </div>
   </div>
 </body>
